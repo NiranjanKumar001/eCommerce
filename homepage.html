@@ -10,9 +10,9 @@
     <div class="nav">
         <div class="logo">♔ Luxelane</div>
         <div class="menu">
-            <a href="homepage.html">Home</a>
-            <a href="signup.html">Signup</a>
-            <a href="about.html">Become a Seller</a>
+            <a id="homeid" href="homepage.html">Home</a>
+            <a id="signupid" href="signup.html" >Signup</a>
+            <a id="sellerid" href="about.html">Become a Seller</a>
         </div>
     </div>
 
@@ -326,6 +326,7 @@
 
 
         let title = document.createElement("h1");
+        title.id='t';
         title.style.color="white"
         title.innerText = data[i].title;
         title.style.wordWrap = "break-word"
@@ -340,6 +341,7 @@
 
 
         let desc = document.createElement("p");
+        desc.id='description';
         desc.innerText = data[i].description;
         title.style.wordWrap = "break-word"
         desc.style.color="white"
@@ -366,6 +368,7 @@
         btnContainer.style.userSelect="none"
 
         let btn = document.createElement("button");
+        btn.className="button"
         btn.innerText = "Add to Cart";
         btn.style.textAlign="center"
         btn.style.margin="3%"

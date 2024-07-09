@@ -309,7 +309,7 @@
     mainDiv.style.display = "flex";
     mainDiv.style.justifyContent = "space-around";
     mainDiv.style.flexWrap = "wrap";
-    mainDiv.style.border= "3px solid red";
+    // mainDiv.style.border= "3px solid red";
     function display() {
       mainDiv.innerHTML = "";
       for (let i = 0; i < data.length; i++) {
@@ -327,6 +327,7 @@
 
 
         let title = document.createElement("h1");
+        title.id='t';
         title.style.color="white"
         title.innerText = data[i].title;
         title.style.wordWrap = "break-word"
@@ -341,8 +342,10 @@
 
 
         let desc = document.createElement("p");
+        desc.id='description';
         desc.innerText = data[i].description;
         desc.style.wordWrap = "break-word"
+        desc.style.overflow="auto"
         desc.style.color="white"
 
 
@@ -367,6 +370,7 @@
         btnContainer.style.userSelect="none"
 
         let btn = document.createElement("button");
+        btn.className="button"
         btn.innerText = "Add to Cart";
         btn.style.textAlign="center"
         btn.style.margin="3%"
@@ -375,6 +379,7 @@
         });
 
           let delBtn = document.createElement("button");
+          delBtn.className="button"
           delBtn.innerText = "Delete";
           delBtn.style.textAlign="center"
           delBtn.style.margin="3%"
@@ -384,6 +389,7 @@
 
           
           let updBtn = document.createElement("button")
+          updBtn.className="button"
           updBtn.innerText = "update";
           updBtn.style.textAlign="center"
           updBtn.style.margin="3%"
