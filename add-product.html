@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxelane - Add Product</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <div class="nav">
+        <div class="logo">♔ Luxelane</div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="add-product.html">Add Product</a>
+            <a href="login.html">Logout</a>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <form id="addProductForm" class="form" onsubmit="addProduct(event)">
+            <h2>Add Product</h2>
+            <input type="text" name="" id="id" placeholder="id" />
+            <input type="text" name="" id="title" placeholder="title" />
+            <input type="text" name="" id="price" placeholder="price" />
+            <input type="text" name="" id="description" placeholder="description" />
+            <input type="text" name="" id="category" placeholder="category" />
+            <input type="text" name="" id="image" placeholder="image" />
+            <input type="text" name="" id="rate" placeholder="rate" />
+            <input type="text" name="" id="count" placeholder="count" />
+            <button onclick="addData()">Add</button>
+            <!-- <button type="submit">Add Product</button> -->
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+<script>
+    let data = JSON.parse(localStorage.getItem("data")) || [];
+    console.log(data);
+  
+    function addData() {
+      let id = document.getElementById("id");
+      let title = document.getElementById("title");
+      let price = document.getElementById("price");
+      let description = document.getElementById("description");
+      let category = document.getElementById("category");
+      let image = document.getElementById("image");
+      let rate = document.getElementById("rate");
+      let count = document.getElementById("count");
+  
+      let obj = {
+        id: id.value,
+        title: title.value,
+        price: price.value,
+        description: description.value,
+        category: category.value,
+        image: image.value,
+        rating: {
+          rate: rate.value,
+          count: count.value,
+        },
+      };
+      data.push(obj);
+      localStorage.setItem("data", JSON.stringify(data))
+  
+    }
+  </script>

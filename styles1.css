@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;1,6..12,500&family=Nunito:wght@300;400;500;600;700;800;900&display=swap');
+
+body {
+    background-color: #1A1A1A;
+    font-family: 'Nunito', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo {
+    color: white;
+    padding: 10px;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.menu a {
+    padding: 10px;
+    margin-left: 30px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 800;
+}
+
+.menu a:hover{
+    color: rgb(175, 173, 173);
+}
+
+.input {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 20px;
+}
+
+.input textarea, .input input {
+    width: 30%;
+    padding: 10px;
+    margin-right: 10px;
+    background-color:#1A1A1A;
+    color: white;
+    font-size: large;
+    font-weight: 300;
+    border: 2px solid white;
+    text-align: center;
+}
+
+.input textarea:hover, .input input:hover{
+    background-color: black;
+}
+
+.input textarea{
+    resize: none;
+    overflow: hidden;
+}
+
+.input button {
+    padding: 10px;
+    background-color:#1A1A1A;
+    color: rgb(255, 255, 255);
+    font-size: large;
+    font-weight: 900;
+    font-family: 'Nunito', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-style: normal;
+    border: 2px solid white;
+    border-radius: 35%;
+    cursor: pointer;
+}
+
+.input button:hover{
+    background-color: #000000;
+}
+.form-container {
+    user-select: none;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2{
+    font-size: 30px;
+    font-family: "Playwrite GB S", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+button {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 15px;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: black;
+}
+#signup{
+    text-align: center;
+    font-size: 13px;
+}
+
+p{
+    text-align: center;
+}
+@media screen and (max-width: 640px){
+    .menu a{
+        float: none;
+        display: block;
+        background-color: #04AA6D;
+        border: 1.5px solid white;
+    }
+}

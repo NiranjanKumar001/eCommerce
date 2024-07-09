@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <div class="nav">
+        <div class="logo">♔ Luxelane</div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="add-product.html">Add Product</a>
+            <a href="login.html">Logout</a>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <form id="updateProductForm" class="form" onsubmit="updateProduct(event)">
+            <h2>Update Product</h2>
+            <input type="hidden" name="id" id="id" />
+            <input type="text" name="title" id="title" placeholder="Title" />
+            <input type="text" name="price" id="price" placeholder="Price" />
+            <input type="text" name="description" id="description" placeholder="Description" />
+            <input type="text" name="category" id="category" placeholder="Category" />
+            <input type="text" name="image" id="image" placeholder="Image URL" />
+            <input type="text" name="rate" id="rate" placeholder="Rating" />
+            <input type="text" name="count" id="count" placeholder="Count" />
+            <button type="submit">Update</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        //to get data
+        document.addEventListener("DOMContentLoaded", function () {
+            let updInd = localStorage.getItem("updInd");
+            if (updInd !== null) {
+                let data = JSON.parse(localStorage.getItem("data")) || [];
+                let product = data[updInd];
+                if (product) {
+                    document.getElementById("id").value = product.id;
+                    document.getElementById("title").value = product.title;
+                    document.getElementById("price").value = product.price;
+                    document.getElementById("description").value = product.description;
+                    document.getElementById("category").value = product.category;
+                    document.getElementById("image").value = product.image;
+                    document.getElementById("rate").value = product.rating.rate;
+                    document.getElementById("count").value = product.rating.count;
+                } else {
+                    alert("Product not found!");
+                    window.location.href = "index.html";// redirecting again to index foer checking the data is updatde or not
+                }
+            } else {
+                alert("Product index not found!");
+                window.location.href = "index.html";
+            }
+        });
+
+        // Function to update product
+        function updateProduct(event) {
+            event.preventDefault();
+            let id = document.getElementById("id").value;
+            let title = document.getElementById("title").value;
+            let price = document.getElementById("price").value;
+            let description = document.getElementById("description").value;
+            let category = document.getElementById("category").value;
+            let image = document.getElementById("image").value;
+            let rate = document.getElementById("rate").value;
+            let count = document.getElementById("count").value;
+
+            let updatedProduct = {
+                id: id,
+                title: title,
+                price: price,
+                description: description,
+                category: category,
+                image: image,
+                rating: {
+                    rate: rate,
+                    count: count,
+                },
+            };
+
+            let dataIndex = localStorage.getItem("updInd");
+            let data = JSON.parse(localStorage.getItem("data")) || [];
+            data[dataIndex] = updatedProduct;
+            localStorage.setItem("data", JSON.stringify(data));
+            alert("Product updated successfully!");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
